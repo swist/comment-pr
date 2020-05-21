@@ -1,16 +1,17 @@
-name: 'comment-pr'
+name: "comment-pr"
 branding:
-  icon: 'message-square'
-  color: 'gray-dark'
-description: 'Post a dynamic comment on github PullRequests'
+  icon: "message-square"
+  color: "gray-dark"
+description: "Post a dynamic comment on github PullRequests"
 inputs:
-  comment:  # id of input
-    description: 'Comment you would like to post'
-    required: true
-    default: ''
   GITHUB_TOKEN:
-    description: 'Github Token for authentication'
+    description: "Github Token for authentication"
     required: true
+outputs:
+  test-head: # id of output
+    description: "head"
+  pr-head:
+    description: "pr-head"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
