@@ -11,8 +11,8 @@ This action can be used to post a dynamic comment on a github PR
 ## Example usage
 
 ```yaml
-uses: JoseThen/comment-pr@v1
+uses: swist/comment-pr@v1
 with:
-  comment: 'This PR is the bees knees!'
+  comment: "This PR is the bees knees!"
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
