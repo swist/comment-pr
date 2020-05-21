@@ -511,11 +511,13 @@ async function run() {
     const github_token = core.getInput("GITHUB_TOKEN");
 
     const context = github.context;
+    const owner = context.payload.repository.owner.name;
+    const repo = conetxt.payload.repository.name;
     const pull_number = context.payload.issue.number;
-
     const octokit = new github.GitHub(github_token);
     const pullRequest = await octokit.pulls.get({
-      ...context.repo,
+      owner,
+      repo,
       pull_number
     });
     const branchName = `${pullRequest.head.ref}-${pullRequest.number}-${context.run_number}`;
