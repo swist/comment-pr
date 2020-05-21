@@ -18,9 +18,9 @@ async function run() {
       pull_number
     });
     console.log(pullRequest);
-    const branchName = `${pullRequest.head.ref}-${pullRequest.number}-${context.run_number}`;
+    const branchName = `${pullRequest.data.head.ref}-${pullRequest.data.number}-${context.run_number}`;
     core.setOutput("test-head", branchName);
-    core.setOutput("pr-head", pullRequest.head.ref);
+    core.setOutput("pr-head", pullRequest.data.head.ref);
   } catch (error) {
     core.setFailed(error.message);
   }
