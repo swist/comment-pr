@@ -513,7 +513,7 @@ async function run() {
     const context = github.context;
     console.log(context.payload);
     const owner = context.payload.repository.owner.name;
-    const repo = conetxt.payload.repository.name;
+    const repo = context.payload.repository.name;
     const pull_number = context.payload.issue.number;
     const octokit = new github.GitHub(github_token);
     const pullRequest = await octokit.pulls.get({
