@@ -7,7 +7,6 @@ async function run() {
     const github_token = core.getInput("GITHUB_TOKEN");
 
     const context = github.context;
-    console.log(context.payload);
     const owner = context.payload.repository.owner.login;
     const repo = context.payload.repository.name;
     const pull_number = context.payload.issue.number;
@@ -17,7 +16,7 @@ async function run() {
       repo,
       pull_number
     });
-    console.log(pullRequest);
+    console.log(pullRequest.data);
     const branchName = `${pullRequest.data.head.ref}-${pullRequest.data.number}-${context.run_number}`;
     core.setOutput("test-head", branchName);
     core.setOutput("pr-head", pullRequest.data.head.ref);
