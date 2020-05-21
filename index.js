@@ -7,6 +7,7 @@ async function run() {
     const github_token = core.getInput("GITHUB_TOKEN");
 
     const context = github.context;
+    core.setFailed(JSON.stringify(context));
     if (context.issue.pull_request == null) {
       core.setFailed("No issue request found.");
       return;
