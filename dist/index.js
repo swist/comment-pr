@@ -512,7 +512,7 @@ async function run() {
 
     const context = github.context;
     core.setFailed(JSON.stringify(context));
-    if (context.issue.pull_request == null) {
+    if (context.payload.issue.pull_request == null) {
       core.setFailed("No issue request found.");
       return;
     }
