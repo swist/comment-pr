@@ -520,6 +520,7 @@ async function run() {
       repo,
       pull_number
     });
+    console.log(pullRequest);
     const branchName = `${pullRequest.head.ref}-${pullRequest.number}-${context.run_number}`;
     core.setOutput("test-head", branchName);
     core.setOutput("pr-head", pullRequest.head.ref);
