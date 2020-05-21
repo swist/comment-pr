@@ -511,6 +511,7 @@ async function run() {
     const github_token = core.getInput("GITHUB_TOKEN");
 
     const context = github.context;
+    console.log(context.payload);
     const owner = context.payload.repository.owner.name;
     const repo = conetxt.payload.repository.name;
     const pull_number = context.payload.issue.number;
