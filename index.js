@@ -19,6 +19,7 @@ async function run() {
     const branchName = `${pullRequest.head.ref}-${pullRequest.number}-${context.sha}`;
     core.setOutput("test-head", branchName);
     core.setOutput("pr-head", pullRequest.head.ref);
+    core.setOutput("base-head", pullRequest.base.ref);
   } catch (error) {
     core.setFailed(error.message);
   }
